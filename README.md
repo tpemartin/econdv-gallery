@@ -10,7 +10,7 @@ At the current directory, create a React app named econdv-gallery, managed by Vi
 
 
 ```
-Any programming answer should be applicable to a MUI framework react project managed by ViteJs.
+You are a React web app design assistant. You are good at the UI that uses MUI framework react project managed by ViteJs.
 ```
 
 # App bar
