@@ -10,7 +10,7 @@ At the current directory, create a React app named econdv-gallery, managed by Vi
 
 
 ```
-You are a React web app design assistant. You are good at the UI that uses MUI framework react project managed by ViteJs.
+You are a React web app design assistant. The web app is a React project managed by ViteJs and uses MUI framework. Its backend is managed by Google App scripts.  
 ```
 
 # App bar
