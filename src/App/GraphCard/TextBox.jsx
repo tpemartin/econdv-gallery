@@ -1,19 +1,46 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Stack, Typography, Rating } from '@mui/material';
 
-const TextBox = ({ children }) => {
+const TextBox = ({ children,showRating}) => {
+
+  
   return (
-    <Box
-      sx={{
-        height: { xs: '40vh', md: '100%' }, // 40% of viewport height for small screens
-        width: '100%',
-        overflow: 'auto',
-        boxSizing: 'border-box',
-      }}
-    >
-      {children}
-    </Box>
+      <Stack direction="column" spacing={2}>
+        <Box
+          sx={{
+            height: {
+              sm: "20vh",
+              md: "40vh",
+            },
+            width: '100%',
+            overflow: 'auto',
+            boxSizing: 'border-box',
+          }}
+        >
+          {children}
+        </Box>
+        <Box >
+          {showRating? <RatingBox/>:null}
+        </Box>
+      </Stack>
   );
 };
+
+function RatingBox() {
+  const [rate, setRate] = React.useState(null);
+
+  const handleOnChange = (event) => {
+    setRate(event.target.value);
+  }
+
+  return (
+    <Stack direction="row" spacing={0} sx={{ width: "200px" }}>
+      <Typography variant="body" sx={{ flexGrow: 1, }}>
+        評分
+      </Typography>
+      <Rating name="no-value" value={rate} onChange={handleOnChange} />
+    </Stack>
+  );
+}
 
 export default TextBox;

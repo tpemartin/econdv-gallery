@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Stack } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBarMenu from './EconDvAppBar/AppBarMenu';
+import AppLogin from './EconDvAppBar/AppLogin/AppLogin';
 
-const EconDvAppBar = () => {
+const EconDvAppBar = ({setShowRating}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -22,38 +23,11 @@ const EconDvAppBar = () => {
           EconDV Gallery
         </Typography>
 
-        <div>
+
+        <Stack direction="row" spacing={1}>
+          <AppLogin setShowRating={setShowRating}/>
           <AppBarMenu />
-          {/* <IconButton
-            size="large"
-            aria-label="展示 menu"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleClick}
-            color="inherit"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            open={open}
-            onClose={handleClose}
-          >
-            <MenuItem onClick={handleClose}>選擇展示</MenuItem>
-            <MenuItem onClick={handleClose}>About</MenuItem>
-            <MenuItem onClick={handleClose}>Contact</MenuItem>
-          </Menu> */}
-        </div>
+        </Stack>
       </Toolbar>
     </AppBar>
   );

@@ -14,9 +14,12 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.12",
     "@mui/material": "^5.15.14",
+    "@react-oauth/google": "^0.12.1",
+    "axios": "^1.6.8",
     "mui-image": "^1.0.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-oauth": "^0.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
