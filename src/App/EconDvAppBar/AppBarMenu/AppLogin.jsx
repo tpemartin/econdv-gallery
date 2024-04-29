@@ -8,10 +8,8 @@ import AccessibilityIcon from '@mui/icons-material/Accessibility';
 export default function AppLogin({setShowRating, setAssessment}) {
 
   const [loginStatus, setLoginStatus] = useState("not login")
-  // const [hasLogin, setHasLogin] = useState(false)
   const [userData, setUserData] = useState(null)
-  // const [isClassStudent, setIsClassStudent] = useState(null)
-  // const [loginClicked, setLoginClicked] = useState(false)
+  
 
   const login = useGoogleLogin({
     onSuccess: tokenResponse => {

@@ -1,3 +1,5 @@
 {
-    "url": "https://script.google.com/macros/s/AKfycbxGvvbp9MZ50oyRKNrlYH68IgYcI5AUp2ly09GafoMGilzghbG7JMd2hqZ87A8F8mJo/exec"
+    "url": "https://script.google.com/macros/s/AKfycbxGvvbp9MZ50oyRKNrlYH68IgYcI5AUp2ly09GafoMGilzghbG7JMd2hqZ87A8F8mJo/exec",
+    "github-content": "https://api.github.com/repos/tpemartin/econdv-gallery-content/contents",
+    "content": "https://tpemartin.github.io/econdv-gallery-content/"
 }

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Stack } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBarMenu from './EconDvAppBar/AppBarMenu';
-import AppLogin from './EconDvAppBar/AppLogin/AppLogin';
+import AppLogin from './EconDvAppBar/AppBarMenu/AppLogin';
+import SaveSubmitButtons from './EconDvAppBar/SaveSubmitButtons';
 
 const EconDvAppBar = ({setShowRating}) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -25,6 +26,7 @@ const EconDvAppBar = ({setShowRating}) => {
 
 
         <Stack direction="row" spacing={1}>
+          <SaveSubmitButtons />
           <AppLogin setShowRating={setShowRating}/>
           <AppBarMenu />
         </Stack>
