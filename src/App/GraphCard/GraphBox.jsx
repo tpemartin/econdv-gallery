@@ -24,13 +24,15 @@ const GraphBox = ({ imageUrl, setGraphHeight }) => {
           md: "40vh",
         }
       }}>
-        <Image src={imageUrl} fit="contain" onClick={handleClick} />
+        <Image src={imageUrl} fit="contain" onClick={handleClick} 
+        duration={1000}
+        />
         {/* <img src={imageUrl?imageUrl:graph} alt="graph" style={{ width: '100%', maxWidth: '100%', cursor: 'pointer' }} /> */}
       </Box>
 
       <Dialog open={open} onClose={handleClose}>
         <DialogContent>
-          <Image src={imageUrl} fit="contain" />
+          <Image src={imageUrl} fit="contain" duration={1000} />
           {/* <img src={imageUrl} alt="graph"  /> */}
           <IconButton aria-label="close" onClick={handleClose}>
             <CloseIcon />
