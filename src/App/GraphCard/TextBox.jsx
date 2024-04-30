@@ -1,7 +1,9 @@
 import React from 'react';
 import { Box, Stack, Typography, Rating } from '@mui/material';
+import Markdown from 'react-markdown';
+import MarkdownRenderer from './TextBox/MarkdownRenderer';
 
-const TextBox = ({ children,showRating}) => {
+const TextBox = ({ children,showRating, context}) => {
 
   
   return (
@@ -17,7 +19,7 @@ const TextBox = ({ children,showRating}) => {
             boxSizing: 'border-box',
           }}
         >
-          {children}
+          <MarkdownRenderer markdownText={context} />
         </Box>
         <Box >
           {showRating? <RatingBox/>:null}

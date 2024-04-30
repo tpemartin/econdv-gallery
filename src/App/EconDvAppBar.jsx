@@ -5,7 +5,7 @@ import AppBarMenu from './EconDvAppBar/AppBarMenu';
 import AppLogin from './EconDvAppBar/AppBarMenu/AppLogin';
 import SaveSubmitButtons from './EconDvAppBar/SaveSubmitButtons';
 
-const EconDvAppBar = ({setShowRating}) => {
+const EconDvAppBar = ({setShowRating, weeks, week, setWeek, setContent}) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -26,9 +26,9 @@ const EconDvAppBar = ({setShowRating}) => {
 
 
         <Stack direction="row" spacing={1}>
-          <SaveSubmitButtons />
+          {/* <SaveSubmitButtons /> */}
           <AppLogin setShowRating={setShowRating}/>
-          <AppBarMenu />
+          <AppBarMenu weeks={weeks} week={week} setWeek={setWeek} setContent={setContent}/>
         </Stack>
       </Toolbar>
     </AppBar>

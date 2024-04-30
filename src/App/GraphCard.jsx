@@ -3,11 +3,14 @@ import { Paper, Grid, Box } from '@mui/material';
 import GraphBox from './GraphCard/GraphBox';
 import TextBox from './GraphCard/TextBox';
 import graph from "./GraphCard/graph-sample.png"
-const GraphCard = ({imageUrl=graph, showRating}) => {
+import Circle from './GraphCard/Circle';
+
+const GraphCard = ({imageUrl=graph, showRating, item, number}) => {
 
 
   return (
     <Paper sx={{ padding: 2, margin: 2, height: "600px", maxHeight: "80vh" }} >
+      <Circle number={number} />
       <Grid container spacing={2}>
         <Grid item xs={12} md={7}>
 
@@ -15,16 +18,7 @@ const GraphCard = ({imageUrl=graph, showRating}) => {
 
         </Grid>
         <Grid item xs={12} md={5}>
-          <TextBox showRating={showRating}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis est nec turpis posuere, at varius nunc volutpat. Sed tincidunt congue leo, et hendrerit turpis tincidunt vel.
-            </p>
-            <p>
-              Integer nec turpis vitae justo lacinia sollicitudin. Fusce auctor aliquam sem vehicula varius. Aliquam erat volutpat.
-            </p>
-            <p>
-              Nunc auctor dui in fermentum dictum. Donec lobortis ante sit amet tellus bibendum, nec condimentum lorem scelerisque.
-            </p>
+          <TextBox showRating={showRating} context={item.說明文字}>
           </TextBox>
         </Grid>
       </Grid>

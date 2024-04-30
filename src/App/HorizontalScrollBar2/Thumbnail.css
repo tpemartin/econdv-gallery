@@ -1,0 +1,11 @@
+.thumbnail-container {
+    width: 54px; /* Set container width */
+    height: 54px; /* Set container height */
+    overflow: hidden; /* Hide overflow to ensure image stays within container */
+  }
+  
+  .thumbnail-image {
+    width: 100%; /* Ensure image takes full width of container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  

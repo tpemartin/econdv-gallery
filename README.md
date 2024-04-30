@@ -30,3 +30,10 @@ Create a MUI app bar with the following requirements:
 ```
 create a horizontal scroll bar component that can accomodate mutiple boxes and a box is active if it is clicked. If none clicked, a default one is active. An active box will have red outline. The scroll bar will show in the bottom of the view port
 ```
+
+# App Scripts
+
+Create a function that can turn any github url to a raw url like:
+turning "https://github.com/{user}/{repo}/blob/main/{path to file}" into "https://raw.githubusercontent.com/{user}/{repo}/main/{path to file}"
+
+Create a function that can obtain an image blob from an url
