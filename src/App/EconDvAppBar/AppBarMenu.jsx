@@ -21,7 +21,7 @@ export default function AppBarMenu({ weeks, week, setWeek, setContent}) {
 }
 function WeekSelectMenu({ weeks, week, setWeek, setContent}) {
   return <FormControl fullWidth >
-        <InputLabel id="demo-simple-select-label">{week?week:weeks[0]}</InputLabel>
+        <InputLabel id="demo-simple-select-label" sx={{color: "white"}}>{week?week:weeks[0]}</InputLabel>
         <MySelectComponent weeks={weeks} week={week} setWeek={setWeek} setContent={setContent}/> 
   </FormControl>
 }
@@ -34,7 +34,7 @@ function MySelectComponent({ weeks, week, setWeek, setContent}) {
 
   return (
     <Select value={week} onChange={handleChange}
-      sx={{ height: 40 }}
+      sx={{ height: 40, color: "white" }}
       labelId="demo-simple-select-label"
       id="demo-simple-select"
       label={week?week:weeks[0]}

@@ -4,7 +4,7 @@ import { Typography } from '@mui/material';
 
 function MarkdownRenderer({ markdownText }) {
   return (
-    <Typography component="div">
+    <Typography component="div" sx={{textAlign: "left"}}>
       <ReactMarkdown>{markdownText}</ReactMarkdown>
     </Typography>
   );
