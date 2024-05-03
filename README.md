@@ -31,6 +31,25 @@ Create a MUI app bar with the following requirements:
 create a horizontal scroll bar component that can accomodate mutiple boxes and a box is active if it is clicked. If none clicked, a default one is active. An active box will have red outline. The scroll bar will show in the bottom of the view port
 ```
 
+# ratingStorage
+
+Check local storage `rateStorage` if it does not exists, create a new one with the following structure:
+```
+{
+  "current week": rateTemplate
+}
+```
+where `rateTemplate` is an object with the following structure:
+```
+{
+  "id1": singleRateTemplate,
+  "id2": singleRateTemplate,
+  :
+  "idn": singleRateTemplate
+}
+```
+where "id1", "id2", ..., "idn" are the ids coming from an array `idList` and `singleRateTemplate` is given. 
+
 # App Scripts
 
 Create a function that can turn any github url to a raw url like:

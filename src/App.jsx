@@ -12,6 +12,7 @@ import { Box } from '@mui/material';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import config from './config.json';
 import fetchContent from './fetchContent';
+import create_rateStorageTemplate from './rating';
 
 window.contentEntry = config['content'];
 
@@ -34,9 +35,20 @@ function App() {
         const weeksList = data.filter(item => item.name.includes('week')).map(item => item.name).sort();
         // split string by "week" and keep the number part, if number less than 10, add 0 before it
         setWeeks(weeksList);
-        fetchContent(weeksList[0], contentEntry, setContent);
+        return fetchContent(weeksList[0], contentEntry);
 
-      });
+      }).then(
+        (data) => {
+          console.log(data);
+          setContent(data);
+          const idList = data.map(item => item.id);
+          
+          const rateStorage =  create_rateStorageTemplate(data[0]['週次'], idList)
+          window.rateStorage = rateStorage;
+          console.log(rateStorage);
+          localStorage.setItem('rateStorage', JSON.stringify(rateStorage));
+        }
+      );
   }, []);
 
 
@@ -60,14 +72,20 @@ function GraphContent({ showRating, content }) {
   const [item, setItem] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
   
+  const currentId = item? item['id']: content[0]['id'];
+  const currentWeek = item? item['週次']: content[0]['週次'];
+
+  const rating = window.rateStorage[currentWeek][currentId];
+
   console.log(item)
   console.log(activeIndex)
 
   const graphCard = item ? 
-    <GraphCard imageUrl={item.imgSrc} showRating={showRating} item={item} 
+    <GraphCard id={item['id']} imageUrl={item.imgSrc} showRating={showRating} item={item}
+     rating={rating}
     number = {activeIndex+1}/>:
-    <GraphCard imageUrl={content[0].imgSrc} showRating={showRating} item={content[0]} 
-    number = {1} />;
+    <GraphCard id={content[0]['id']} imageUrl={content[0].imgSrc} showRating={showRating} item={content[0]} 
+    number = {1} rating={rating} />;
 
   return content ? <>
     <Box sx={{ padding: 2 }}>
