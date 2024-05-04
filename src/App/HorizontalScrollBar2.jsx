@@ -24,7 +24,9 @@ const HorizontalScrollBar2 = ({ content, setItem, activeIndex, setActiveIndex })
     sx={{
       position: 'fixed',
       bottom: 0,
-      left: 0,}}
+      left: 0,
+      overflowX: "scroll",
+      width: "100vw"}}
     >
       {content.map((value, index) => (
 
