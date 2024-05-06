@@ -54,4 +54,16 @@ function create_rateStorageTemplate(week = 'current week', idList) {
     return initialRateStorage
 }
 
+export function updateRateStorage(data) {
+
+  const idList = data.map(item => item.id);
+  const currentWeek = data[0]['週次'];
+  const rateStorage = create_rateStorageTemplate(currentWeek, idList)
+
+  window.rateStorage[currentWeek] = rateStorage[currentWeek];
+  window.currentWeek = currentWeek;
+
+  localStorage.setItem('rateStorage', JSON.stringify(window.rateStorage));
+}
+
 export default create_rateStorageTemplate;

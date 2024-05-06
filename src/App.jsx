@@ -35,6 +35,7 @@ function App() {
         const weeksList = data.filter(item => item.name.includes('week')).map(item => item.name).sort();
         // split string by "week" and keep the number part, if number less than 10, add 0 before it
         setWeeks(weeksList);
+        setWeek(weeksList[0]);
         return fetchContent(weeksList[0], contentEntry);
 
       }).then(
@@ -69,12 +70,14 @@ function App() {
 }
 
 function GraphContent({ showRating, content }) {
-  const [item, setItem] = useState(null);
+  const [item, setItem] = useState(content[0]);
   const [activeIndex, setActiveIndex] = useState(0);
   
-  const currentId = item? item['id']: content[0]['id'];
-  const currentWeek = item? item['週次']: content[0]['週次'];
+  const currentId = item['id']; //item? item['id']: content[0]['id'];
+  const currentWeek = item['週次']; // item? item['週次']: content[0]['週次'];
 
+  console.log(currentId)
+  console.log(currentWeek)
   const rating = window.rateStorage[currentWeek][currentId];
 
   console.log(item)

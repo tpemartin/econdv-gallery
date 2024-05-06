@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import fetchContent from '../../fetchContent';
+import { updateRateStorage } from '../../rating';
 
 export default function AppBarMenu({ weeks, week, setWeek, setContent}) {
 
@@ -29,7 +30,11 @@ function MySelectComponent({ weeks, week, setWeek, setContent}) {
   
   const handleChange = (event) => {
     setWeek(event.target.value);
-    fetchContent(event.target.value, window.contentEntry, setContent);
+    fetchContent(event.target.value, window.contentEntry)
+      .then(content => {
+        setContent(content)
+        updateRateStorage(content);
+      });
   };
 
   return (
