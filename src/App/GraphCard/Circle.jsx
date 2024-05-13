@@ -5,11 +5,12 @@ function Circle({ number }) {
   return (
     <Box
       sx={{
+        zIndex: 2,
         position: 'absolute',
-        top: '14%',
+        top: '0%',
         right: '50%',
-        width: 20,
-        height: 20,
+        width: 50,
+        height: 50,
         borderRadius: '50%',
         backgroundColor: 'primary.main',
         display: 'flex',
@@ -20,7 +21,13 @@ function Circle({ number }) {
         fontWeight: 'bold',
       }}
     >
-      <Typography>{number}</Typography>
+      <Typography 
+        sx={{
+          fontSize: '1.5rem',
+          fontWeight: 'bold',
+        
+        }}
+      >{number}</Typography>
     </Box>
   );
 }

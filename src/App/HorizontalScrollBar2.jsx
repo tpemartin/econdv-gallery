@@ -3,12 +3,13 @@ import { Badge, Box, Button, Stack } from '@mui/material';
 import Thumbnail from './HorizontalScrollBar2/Thumbnail';
 import BadgeBox from './HorizontalScrollBar2/BadgeBox';
 
-const HorizontalScrollBar2 = ({ content, setItem, activeIndex, setActiveIndex }) => {
+const HorizontalScrollBar2 = ({ content, setItem, activeIndex, setActiveIndex, setCurrentRating }) => {
   // State to track the active box, default is the first box (index 0)
  
   // Generating a list of boxes for demonstration purposes
   const handleClick = (index) => {
     setItem(content[index]);
+   
   }
 
   useEffect(() => {
@@ -37,6 +38,11 @@ const HorizontalScrollBar2 = ({ content, setItem, activeIndex, setActiveIndex })
             onClick={() => {
               setActiveIndex(index)
               handleClick(index)
+              console.log('setCurrentRating')
+              console.log(window.rateStorage[content[index]['週次']][content[index]['id']])
+              setCurrentRating(
+                window.rateStorage[content[index]['週次']][content[index]['id']]
+              )
             }
              } // Set the activeIndex state to this box's index
             sx={{

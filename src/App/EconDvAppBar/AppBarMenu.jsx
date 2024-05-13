@@ -30,6 +30,10 @@ function MySelectComponent({ weeks, week, setWeek, setContent}) {
   
   const handleChange = (event) => {
     setWeek(event.target.value);
+    // add #event.target.value to the navigator url
+    window.location.hash = `#${event.target.value}`;
+
+
     fetchContent(event.target.value, window.contentEntry)
       .then(content => {
         setContent(content)

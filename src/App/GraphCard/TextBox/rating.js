@@ -4,6 +4,9 @@ const ratingOptions = [
     { label: "圖片故事性", maxValue: 5 },
     { label: "挑戰度加分", maxValue: 2 },
   ];
+
+const optionMaxValues = {};
+ratingOptions.forEach(e => { optionMaxValues[e.label] = e.maxValue })
   
 const create_workRatingTemplate = () => {
     return {
@@ -12,4 +15,4 @@ const create_workRatingTemplate = () => {
     }
   }
   
-export {ratingOptions, create_workRatingTemplate};
+export {optionMaxValues, ratingOptions, create_workRatingTemplate};
